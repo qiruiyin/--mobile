@@ -1,0 +1,131 @@
+@charset 'utf-8';
+
+$bgs: #84b243, #fec107, #f54337, #cddc39, #019688, #fe5721, #019688;
+
+@import "sandal/core", "mixins";
+
+html, body {
+  height: auto;
+}
+
+body {
+  background: url(../img/qa/bg.jpg) repeat-y;
+  background-size: 100% auto;
+  padding: 30px 30px;
+  @include max-screen(320px) {
+    padding: 30px 20px;
+  }
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+.jiazi {
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+.jiazi-left {
+  left: 0;
+  margin-left: 20%;
+}
+.jiazi-right {
+  right: 0;
+  margin-right: 20%;
+}
+
+.content {
+  background-color: #f7f1f1;
+  box-shadow: 0 0 15px 0 rgba(black, .8);
+  padding: 0 6px;
+  word-wrap: break-word;
+  border: {
+    color: white;
+    style: solid;
+    width: 10px 7px;
+  }
+  ol {
+    list-style-type: decimal;
+    li {
+      margin-left: 20px;
+    }
+  }
+}
+
+.title {
+  margin-top: 30px;
+}
+
+.qa {
+  padding: 24px 12px;
+  margin-top: 18px;
+  font-size: 14px;
+  width: 84%;
+  position: relative;
+  background-color: #fff;
+  @include max-screen(320px) {
+    padding: 16px 8px;
+    width: 82%;
+  }
+  /* 基本三角生成 */
+  &:before {
+    @include triangle(top, 12px, white);
+    position: absolute;
+  }
+  /* 基本圆球生成 */
+  &:after {
+    @include size(30px, 30px);
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-family: serif;
+  }
+  &.q{
+    margin-left: auto;
+    font-weight: bold;
+    &:before {
+      top: -2px;
+      left: -16px;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content:"Q";
+      top: 0; left: -(30px + 16px);
+    }
+  }
+  @for $i from 1 through length($bgs) {
+    &.q#{$i}:after {
+      background-color: nth($bgs, $i);
+    }
+  }
+  &.a{
+    margin-right: auto;
+    &:before {
+      top: -2px;
+      right: -16px;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      content: "";
+      top: 0; right: -(30px + 16px);
+      background:#24a0f2 url(../img/qa/cq-logo.png) no-repeat center center;
+      background-size: 60%;
+    }
+  }
+}
+
+.text-mm {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.text-wx{
+  display: block;
+  margin: 20px auto 0;
+}

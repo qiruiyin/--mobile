@@ -1,0 +1,37 @@
+@keyframes arrow-move {
+  0% {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0.2;
+  }
+  60% {
+    transform: translate3d(0, 5px, 0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 5px, 0);
+    opacity: 0;
+  }  
+}
+
+@keyframes rotate-mb {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes pos-blue {
+  from {
+    box-shadow: 0 0 0 10px rgba(35,167,241,.2);
+  }
+  to {
+    box-shadow: 0 0 0 30px rgba(35,167,241,.2);
+  }
+}

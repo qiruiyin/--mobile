@@ -1,0 +1,13 @@
+@mixin size($w, $h, $retina: 0) {
+  @if $retina == 1 {
+    $w: $w / 2;
+    $h: $h / 2;
+  }
+  width: $w;
+  height: $h;
+}
+
+@mixin square($w){
+  @include size($w, $w);
+}
+

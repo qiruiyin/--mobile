@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>车圈 - 手机版</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="车圈">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="车圈">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="/favicon.ico">    
+    <link href="img/icon-57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+    <link href="img/icon-114.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <link href="img/icon-180.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+    <!-- build:css css/docs.css -->
+    <link rel="stylesheet" href="./../bower_components/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="./css/docs.css">
+    <!-- endbuild -->
+  </head>
+
+  <body ontouchstart="return false;">
+   <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- 首页 -->
+        <div class="swiper-slide" id="pageHome" data-hash="home">
+          <div class="cover-img">
+            <img src="img/logo.png" alt="车圈" class="logo center-block">
+            <img src="img/home-text.png" alt="More in hand, more on the road" class="home-text center-block">
+          </div>
+          <img src="img/btn-home.png" alt="立即下载" class="btn-download">
+        </div>
+        <!-- 约自驾 -->
+        <div class="swiper-slide" id="pageDrive" data-hash="drive">
+          <img src="img/text-drive.png" alt="约自驾" class="slide-title">
+          <div class="camp">
+            <img src="img/huodng1.png" alt="">
+            <img src="img/huodng2.png" alt="">
+            <img src="img/huodng3.png" alt="">
+          </div>
+          <img src="img/btn-download.png" alt="立即下载" class="btn-download">
+        </div>
+        <!-- 语音对讲 -->
+        <div class="swiper-slide" id="pageVoice" data-hash="voice">
+          <div class="voice-btn">
+            <img src="img/finger.png" alt="finger" class="finger">
+          </div>
+          <img src="img/text-voice.png" alt="语音对讲" class="slide-title">
+          <img src="img/voice-talk.png" alt="语音对讲" class="voice-talk animated">
+          <img src="img/btn-download.png" alt="立即下载" class="btn-download">
+        </div>
+        <!-- 领队定位 -->
+        <div class="swiper-slide" id="pageLeader" data-hash="leader">
+          <img src="img/text-leader.png" alt="领队定位" class="slide-title">
+          <div class="map">
+            <img src="img/leader-mode-i4.png" class="map-i4 center-block">
+            <img src="img/leader-mode.png" class="lead-map center-block">
+            <img class="pos-blue">
+            <img src="img/icon-pos.png" class="cur-pos">
+            <img src="img/icon-dist.png" class="leader-pos animated bounce hinge">
+          </div>
+          <img src="img/btn-download.png" alt="立即下载" class="btn-download">
+        </div>
+        <!-- 花名册 -->
+        <div class="swiper-slide" id="pageList" data-hash="list">
+          <img src="img/text-list.png" alt="花名册" class="slide-title">
+          <img src="img/shake.png" class="shake center-block animated">
+          <img src="img/btn-download.png" alt="立即下载" class="btn-download">
+        </div>
+      </div>
+    </div>
+    <img src="img/arrow-white.png" alt="下一页" class="arrow-next">
+    <div class="mask">
+      <img src="img/mobile.png" width="128" height="128" class="rotate-mb">
+    </div>
+    <!-- build:js js/docs.js -->
+    <script src="./../bower_components/swiper/dist/js/swiper.js"></script>
+    <script src="js/docs.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

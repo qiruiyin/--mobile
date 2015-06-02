@@ -1,0 +1,228 @@
+$use-bounceInDown:  true;
+$use-tada:          true;
+$use-pulse:         true;
+$use-bounce:        true;
+
+@import "sandal/core",
+        "animate-sass/animate",      
+        "mixins", "base", "frames";
+
+.center-block {
+  @include center-block();
+}
+
+// native banner 转来页面
+.banner-content img{
+  width: 100%;
+}
+
+// 加载页
+.loading {
+  width: 90px;
+  margin: auto;
+  margin-top: 40%;
+  text-align: center;
+  font-size: 1.5em;
+  & > img {
+    width: 100%;
+    animation-iteration-count: infinite;
+  }
+  & > span {
+    line-height: 2;
+  }
+}        
+
+#pageHome {
+  background: #fff url(../img/bg-home.png) no-repeat center;
+  background-size: cover;
+  & > .cover-img{
+    width: 100%;
+    position: absolute;
+    top: perV(180px / 2);
+
+  }
+  .logo {
+    width: (210px / 2);
+  }
+  .home-text {
+    width: (340px / 2);
+    margin-top: 40px;
+    @include iphone4 {
+      margin-top: 30px;
+    }
+    @include max-screen(320px){
+      margin-top: 30px;
+    }
+  }
+  & > .btn-home {
+    @include size(280px, 80px, 1);
+    margin-top: auto;
+    margin-bottom: perV(135px);
+  }
+}
+
+#pageDrive {
+  background-color: #fff;
+  & > .camp {
+    width: 100%;
+    bottom: perV(210px);
+    position: absolute;
+    @include iphone4 {
+      bottom: perV(260px);
+    }
+    img {
+      position: absolute;
+      bottom: 0; left: 50%;
+      height: auto;
+      transition: all 0.5s ease-in-out;
+    }
+    img:nth-child(1) {
+      width: perV(626px);
+      margin-left: perV(626px) / -2;
+      z-index: 30;
+    }
+    img:nth-child(2) {
+      width: perV(548px);
+      margin-left: perV(548px) / -2;
+      z-index: 20;
+      @include iphone4() {
+        display: none;
+      }
+    }
+    img:nth-child(3) {
+      width: perV(480px);
+      margin-left: perV(480px) / -2;
+      z-index: 10;
+      @include iphone4() {
+        display: none;
+      }
+    }
+    &.active > img:nth-child(1) {
+      transform: translate(0, perV(-300px * 2));
+      @include iphone4() {
+        transform: none;
+      }
+    }
+    &.active > img:nth-child(2) {
+      transform: translate(0, perV(-150px * 2));
+    }
+  }
+  & > .slide-title {
+    @include size(382px, 110px, 1);
+  }
+}
+
+#pageVoice {
+  & > .slide-title {
+    @include size(490px, 110px, 1);
+  }
+  & > .voice-btn {
+    @include square(110px);
+    transition: .8s all ease;
+    background-color: #515c62;
+    position: absolute;
+    top: 50%; left: 50%;
+    margin-top: -55px; margin-left: -55px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #9fb2bf;
+    &.touched {
+      box-shadow: 0 0 0 5px #9fb2bf,
+                  0 0 0 32px #d5eefc,
+                  0 0 0 64px #e9f6fe;
+    }
+    & > .finger {
+      width: 420px;
+      transition: .5s all ease;
+      transform: translate(420px, 322px);
+      &.finger-touch {
+        transform: translate(20px, 20px);
+      }
+    }
+  }
+  & > .voice-talk {
+    @include size(484px, 318px, 1);
+    position: absolute;
+    top: 50%; left: 50%;
+    margin-top: (-318px / 4 - 20);
+    margin-left: (-484px / 4);
+    visibility: hidden;
+  }
+  
+}
+
+#pageLeader {
+  background: #fff;
+  & > .map {
+    width: 100%;
+    height: auto;
+    top: 30px;
+    position: relative;
+    & > .map-i4 {
+      display: none;
+    }
+    & > .lead-map{
+      width: 100%;
+    }
+    & > .cur-pos {
+      position: absolute;
+      width: (58px / 2);
+      top: round(percentage(440 / 622));
+      left: round(percentage(432 / 658));
+    }
+    & > .pos-blue {
+      width: 4px; height: 4px;
+      position: absolute;
+      top: round(percentage(457 / 622));
+      left: round(percentage(457 / 658));
+      border-radius: 50%;
+      animation: pos-blue 1s ease infinite;
+    }
+    & > .leader-pos {
+      position: absolute;
+      width: 50px;
+      top: round(percentage(106 / 622));
+      left: round(percentage(156 / 658));
+      animation-iteration-count: infinite;
+    }
+
+    @include iphone4 {
+      top: 0;
+      & > img {
+        display: none;
+      }
+      & > .map-i4 {
+        display: block;
+        max-width: 80%;
+      }
+    }
+  }
+  & > .slide-title {
+    @include size(374px, 110px, 1);
+  }
+}
+
+#pageList {
+  background: #fff;
+  background: url(../img/list.png) no-repeat 50% 40%;
+  background-size: contain;
+  @include iphone4 {
+    background-size: 70%;
+  }
+  & > .shake {
+    @include size(210px, 200px, 1);
+    position: absolute;
+    top: 50%; left: 50%;
+    margin-top: (-200px / 4 - 20);
+    margin-left: (-210px / 4);
+    animation-iteration-count: 2;
+    @include iphone4 {
+      @include size(210px / 2, 200px / 2, 1);
+      margin-top: (-200px / 8 - 20);
+      margin-left: (-210px / 8);
+    }
+  }
+  & > .slide-title {
+    @include size(386px, 110px, 1);
+  }
+}
+

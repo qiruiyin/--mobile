@@ -1,0 +1,83 @@
+// 设计稿中的纵向位置占比
+@function perV($area) {
+  $vw: 750px;
+  @return round(percentage($area / $vw));
+}
+
+body {
+  // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+  -webkit-backface-visibility: hidden; 
+}
+
+img {
+  display: block;
+}
+
+.animated {
+  @include animate-prefixer(animation-duration, $base-duration);
+  @include animate-prefixer(animation-fill-mode, both);
+
+  &.hinge {
+    @include animate-prefixer(animation-duration, $base-duration * 2);
+  }
+}
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  position: relative;
+}
+
+.btn-download {
+  @include size(280px, 80px, 1);
+  position: absolute;
+  left: 50%;
+  margin-left: (-280px / 4);
+  bottom: 60px;
+}
+
+.arrow-next {
+  @include size(34px, 44px, 1);
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  margin-left: 34px / 4 * -1;
+  z-index: 100;
+  animation: arrow-move 2s linear infinite;
+}
+
+.slide-title {
+  position: relative;
+  left: 32px;
+  top: 30px;
+}
+
+.mask {
+  display: none;
+  @include landscape {
+    display: block;
+    @include square(100%);
+    background-color: #000;
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.rotate-mb {
+    animation: rotate-mb 2s linear infinite;
+  
+}

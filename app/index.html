@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>车圈 - 手机版</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="车圈">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="车圈">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="img/icon-57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+    <link href="img/icon-114.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <link href="img/icon-180.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+    <!-- build:css css/docs.css -->
+    <link rel="stylesheet" href="./../bower_components/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="./css/docs.css">
+    <!-- endbuild -->
+  </head>
+
+  <body ontouchstart="return false;">
+    <div class="loading">
+      <img src="img/icon-180.png" alt="车圈" class="animated pulse hinge">
+      <span>00</span>%
+    </div>
+    <script>
+      var progress = document.querySelector('.loading > span'),
+          img = ["arrow-blue","arrow-white","bg-drive","bg-home","btn-download","btn-home","drive-evt01","finger","home-text","huodng1","huodng2","huodng3","icon-114","icon-180","icon-57","icon-dist","icon-pos","leader-mode-i4","leader-mode","list","logo","map","mobile","shake","text-drive","text-leader","text-list","text-voice","voice-talk"],
+          cImg=[],
+          numImagesLoaded = 1;
+
+      var showPercent = function(){
+        var percent = Math.floor(numImagesLoaded / img.length * 100);
+        numImagesLoaded ++;
+        if(percent < 10) {
+          percent = '0' + percent;
+        } else if(percent > 100){
+          percent = 100;
+        }
+        progress.innerHTML = percent;
+        if(percent === 100) {
+          document.cookie = "preload=ok";
+          location.href = 'main.html';
+        }
+      };
+
+      for (var i = 0, x = img.length; i < x; i++){
+        cImg[x] = new Image();
+        cImg[x].src = "img/" + img[i] + '.png';
+        cImg[x].onload = showPercent;
+      }
+    </script>
+  </body>
+</html>
